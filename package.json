@@ -2,11 +2,11 @@
   "name": "social",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Gui",
+  "author": "Mig",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "node server.js",
     "build": "node build/build.js",
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
   },
