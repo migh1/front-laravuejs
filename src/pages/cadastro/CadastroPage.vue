@@ -65,7 +65,7 @@ export default {
     },
     methods: {
         cadastro(){
-            axios.post('http://localhost:8000/api/cadastro', {
+            axios.post('https://api-laravuejs.herokuapp.com/cadastro', {
                 name: this.name,
                 email: this.email,
                 password: this.password,
