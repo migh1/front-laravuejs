@@ -86,7 +86,7 @@ export default {
             reader.readAsDataURL(arquivo[0]);
         },
         perfil(){
-            axios.put('https://api-laravuejs.herokuapp.com/perfil', {
+            axios.put('https://api-laravuejs.herokuapp.com/api/perfil', {
                 name: this.name,
                 email: this.email,
                 password: this.password,

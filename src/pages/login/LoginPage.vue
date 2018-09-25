@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         login(){
-            axios.post('https://api-laravuejs.herokuapp.com/login', {
+            axios.post('https://api-laravuejs.herokuapp.com/api/login', {
                 email: this.email,
                 password: this.password
             })
