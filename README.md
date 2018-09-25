@@ -37,6 +37,19 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     })
     https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related
 4) npm start
+5) server.js
+const express = require('express');
+const path = require('path');
+const serveStatic = require('serve-static');
+
+let app = express();
+app.use(serveStatic(__dirname + "/dist"));
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log('Listening on port ' + port)
+});
+npm install express --save
 
 ##Laravel
 1) composer create-project --prefer-dist laravel/laravel webservice "5.6"
