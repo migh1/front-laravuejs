@@ -16,6 +16,11 @@ export default new Router({
             component: HomePage
         },
         {
+            path: '/index.html',
+            name: 'Home',
+            component: HomePage
+        },
+        {
             path: '/login',
             name: 'Login',
             component: LoginPage
@@ -29,6 +34,11 @@ export default new Router({
             path: '/perfil',
             name: 'Perfil',
             component: PerfilPage
+        },
+        {
+            path: '*',
+            name: 'Home',
+            component: HomePage
         }
     ]
 })
