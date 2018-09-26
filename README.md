@@ -1,24 +1,6 @@
-# social
+# http://api-laravuejs.herokuapp.com
+# http://app-laravuejs.herokuapp.com
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 # Laravel-Vuejs
 
 # Tuto de LaraVuejs
@@ -43,13 +25,38 @@ const path = require('path');
 const serveStatic = require('serve-static');
 
 let app = express();
-app.use(serveStatic(__dirname + "/dist"));
+app.use(serveStatic(__ dirname + "/dist"));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log('Listening on port ' + port)
 });
 npm install express --save
+
+What I notice is that in webpack.dev.conf.js in plugins section there wasn't any plugin added, so what I did was import ExtractTextPlugin in webpack.dev.conf.js and then added in plugins sections like it is added in webpack.prod.conf.js. :
+
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+//...
+plugins: [
+//...,
+new ExtractTextPlugin({
+      filename: utils.assetsPath('css/[name].[contenthash].css'),
+      // set the following option to `true` if you want to extract CSS from
+      // codesplit chunks into this main css file as well.
+      // This will result in *all* of your app's CSS being loaded upfront.
+      allChunks: false,
+    }),
+//...
+]
+
+//....
+
+5) "start": "npm run dev" to  "start": "node server.js",
+6) change axios routes
+
+############# importante #################
+https://router.vuejs.org/guide/essentials/history-mode.html
 
 ##Laravel
 1) composer create-project --prefer-dist laravel/laravel webservice "5.6"
@@ -80,3 +87,5 @@ web: vendor/bin/heroku-php-apache2 public/
      "php artisan clear-compiled",
      "chmod -R 777 public/"
  ]
+
+ 15) git add -f database/database.sqlite
